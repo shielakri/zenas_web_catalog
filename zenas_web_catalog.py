@@ -16,4 +16,10 @@ my_catalog = my_cur.fetchall()
 df = pandas.DataFrame(my_catalog)
 
 # Temp
-streamlit.write(df)
+# streamlit.write(df)
+
+# Put the first column into a list
+color_list = df[0].values.tolist()
+
+# Put a pick list for users to pick the color
+option = streamlit.selectbox('Pick a sweatsuit color or style:', color_list)
